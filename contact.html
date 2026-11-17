@@ -14,8 +14,8 @@
     /* Gekozen thema toepassen vóór de eerste weergave, zodat het donkere thema niet licht knippert. */
     try { var t = localStorage.getItem('cosmic-theme'); if (t === 'dark' || t === 'light') document.documentElement.dataset.theme = t; } catch (e) {}
   </script>
-  <link href="design-tokens.css?v=13" rel="stylesheet"/>
-  <link href="style.css?v=17" rel="stylesheet"/>
+  <link href="design-tokens.css?v=14" rel="stylesheet"/>
+  <link href="style.css?v=18" rel="stylesheet"/>
  </head>
  <body class="page-contact">
   <a class="skip" href="#inhoud">
@@ -199,26 +199,40 @@
    </section>
   </main>
   <footer class="site-footer">
-   <div class="shell footer-grid">
-    <div>
-     <a class="brand" href="index.html">
-      <span aria-hidden="true" class="spark">
-       <svg class="sun-icon" viewBox="0 0 64 64" focusable="false"><g fill="none" stroke="currentColor" stroke-width="3.8" stroke-linecap="round" stroke-linejoin="round"><path d="M19 43a13 13 0 0 1 26 0"/><path d="M9 49 Q32 42 55 49"/><path d="M32 8v9 M17 13l5 8 M47 13l-5 8 M8 27l9 5 M56 27l-9 5 M6 40l9 2 M58 40l-9 2"/></g></svg>
-      </span>
-      Cosmic Spark
-     </a>
+    <div class="shell footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="index.html">
+          <span aria-hidden="true" class="spark"><svg class="sun-icon" viewBox="0 0 64 64" focusable="false"><g fill="none" stroke="currentColor" stroke-width="3.8" stroke-linecap="round" stroke-linejoin="round"><path d="M19 43a13 13 0 0 1 26 0"/><path d="M9 49 Q32 42 55 49"/><path d="M32 8v9 M17 13l5 8 M47 13l-5 8 M8 27l9 5 M56 27l-9 5 M6 40l9 2 M58 40l-9 2"/></g></svg></span>
+          Cosmic Spark
+        </a>
+        <p>Natuurcoaching en begeleiding gericht op rust, aandacht en verbinding met jezelf en de natuur.</p>
+        <a class="button button-gold" href="contact.html">
+          Stel Kim een vraag
+          <span aria-hidden="true">&nearrow;</span>
+        </a>
+      </div>
+      <nav aria-labelledby="footer-paginas" class="footer-nav">
+        <h2 class="footer-heading" id="footer-paginas">Pagina's</h2>
+        <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="aanbod.html">Aanbod</a></li>
+        <li><a href="over-kim.html">Over Kim</a></li>
+        <li><a href="contact.html" aria-current="page">Contact</a></li>
+        </ul>
+      </nav>
+      <nav aria-labelledby="footer-aanbod" class="footer-nav">
+        <h2 class="footer-heading" id="footer-aanbod">Aanbod</h2>
+        <ul>
+        <li><a href="natuurcoaching.html">Natuurcoaching</a></li>
+        <li><a href="aanbod.html#aanbod-kaarten">Alle mogelijkheden</a></li>
+        <li><a href="aanbod.html#voor-organisaties">Voor organisaties</a></li>
+        </ul>
+      </nav>
     </div>
-    <nav aria-label="Paginanavigatie">
-     <strong>Pagina's</strong>
-     <a href="index.html">Home</a>
-     <a href="aanbod.html">Aanbod</a>
-     <a href="over-kim.html">Over Kim</a>
-     <a href="natuurcoaching.html">Natuurcoaching</a>
-    </nav>
-   </div>
-   <div class="shell footer-bottom">
-    &copy; Cosmic Spark
-   </div>
+    <div class="shell footer-bottom">
+      <small>&copy; Cosmic Spark</small>
+      <small>Natuur &middot; Bewustzijn &middot; Verbinding</small>
+    </div>
   </footer>
   <nav aria-label="Hoofdnavigatie mobiel" class="mobile-dock" data-layout="fixed-bottom-four">
    <a aria-label="Home" data-dock="index.html" href="index.html">

@@ -73,7 +73,7 @@ Kies het element dat de **betekenis** van de inhoud of actie het beste beschrijf
 | `<main id="inhoud">` | precies één hoofdinhoudgebied per pagina; doel van de skiplink |
 | `<section aria-labelledby="…">` | thematisch deel met een eigen zichtbare kop |
 | `<article>` | zelfstandig aanboditem, activiteit, ervaring of nieuwsbericht |
-| `<footer>` | sitebrede navigatie naar de overige pagina's en copyrightregel |
+| `<footer>` | merkblok (logo, korte omschrijving, contactknop), twee gelabelde `nav`-groepen (Pagina's, Aanbod) met `h2`-kopjes en `aria-current` op de huidige pagina, onderbalk met copyright en slogan; alleen links naar bestaande pagina's en secties |
 | `<figure>` en `<figcaption>` | beeld mét relevante toelichting of bronvermelding |
 | `<address>` | echte contactgegevens (niet voor algemene locaties) |
 | `<time datetime="…">` | datum van een workshop, retraite of evenement |
