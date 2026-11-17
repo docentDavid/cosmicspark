@@ -31,7 +31,6 @@
   const currentPage = location.pathname.split('/').pop() || 'index.html';
   document.querySelectorAll('[data-dock]').forEach(link => {
     if (link.dataset.dock === currentPage) {
-      link.classList.add('active');
       link.setAttribute('aria-current', 'page');
     }
   });
