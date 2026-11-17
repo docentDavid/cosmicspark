@@ -15,7 +15,7 @@ Schrijf in helder Nederlands, menselijk en warm, zonder onnodig spiritueel jargo
 ## 2. Technische uitgangspunten
 
 - **Statische multipage-site:** `index.html`, `aanbod.html`, `over-kim.html`, `aanbod/natuurcoaching.html`, `contact.html`, plus `bedankt.html` (bedankpagina na het contactformulier, `noindex`, niet in de navigatie).
-- **Detailpagina's per aanbod** staan in de map `aanbod/`: `natuurcoaching`, `individuele-coaching`, `lichaamsgericht-werk`, `energetisch-werk`, `workshops-en-groepen`, `retraites-en-evenementen` en `voor-organisaties` (`.html`). Alle aanbodkaarten linken naar deze pagina's; de knoppen erop openen het contactformulier met de juiste dienst voorgeselecteerd (`?dienst=…`, gelijk aan de optiewaarde in `contact.html`). Bij lichaamsgericht werk staat de beperking *alleen voor vrouwen* als `.detail-note` in de hero. Gebruik daar `../` voor alle links, CSS, scripts en afbeeldingen. De pagina markeert *Aanbod* in beide navigaties met `aria-current="true"` (je bent in dat onderdeel, niet op die pagina). Opbouw: hero met terug-link, "Wat is het?" met paneel "Misschien herken je dit", werkwijze in stappen (`ol.steps`), veelgestelde vragen (`details`/`summary`), "Ook interessant" met drie aanbodkaarten en een afsluitende oproep. Nieuwe detailpagina: zet hem ook in `PRECACHE` van `sw.js` en verhoog `CACHE_VERSION`.
+- **Detailpagina's per aanbod** staan in de map `aanbod/`: `natuurcoaching`, `individuele-coaching`, `lichaamsgericht-werk`, `energetisch-werk`, `workshops-en-groepen`, `retraites-en-evenementen` en `voor-organisaties` (`.html`). Alle aanbodkaarten linken naar deze pagina's; de knoppen erop openen het contactformulier met de juiste dienst voorgeselecteerd (`?dienst=…`, gelijk aan de optiewaarde in `contact.html`). Bij lichaamsgericht werk staat de beperking *alleen voor vrouwen* als `.detail-note` in de hero. Gebruik daar `../` voor alle links, CSS, scripts en afbeeldingen. De pagina markeert *Aanbod* in beide navigaties met `aria-current="true"` (je bent in dat onderdeel, niet op die pagina). Opbouw: hero met terug-link, de naam van het aanbod als `h1` en de slogan eronder (`.detail-tagline`), "Wat is het?" met paneel "Misschien herken je dit", werkwijze in stappen (`ol.steps`), veelgestelde vragen (`details`/`summary`), "Ook interessant" met drie aanbodkaarten en een afsluitende oproep. Nieuwe detailpagina: zet hem ook in `PRECACHE` van `sw.js` en verhoog `CACHE_VERSION`.
 - Het oude adres `natuurcoaching.html` in de root is een doorverwijzing (`noindex`) naar `aanbod/natuurcoaching.html`, zodat bestaande links blijven werken.
 - Gewoon **HTML5 + CSS**. Houd het zonder build-stap te openen in een browser of met Live Server.
 - **Geen Next.js, React, Vue, router, componentbibliotheek of onnodige npm-afhankelijkheden.**
@@ -83,7 +83,7 @@ Kies het element dat de **betekenis** van de inhoud of actie het beste beschrijf
 | `<dialog>` | echte dialoog, bijvoorbeeld een boekingsbevestiging of keuze die de aandacht moet krijgen |
 | `<form>`, `<label>`, `<fieldset>`, `<legend>` | invoer met gekoppelde labels en logisch gegroepeerde velden |
 
-Gebruik **geen `<section>` als generiek stylingblok zonder thematische betekenis**; een `div` is prima voor een puur lay-outtechnische groep. Zet geen `role="button"` op een `div` en maak niet de hele productkaart interactief als er al een duidelijke link in staat.
+Gebruik **geen `<section>` als generiek stylingblok zonder thematische betekenis**; een `div` is prima voor een puur lay-outtechnische groep. Zet geen `role="button"` op een `div`. Een aanbodkaart is in zijn geheel klikbaar via één uitgerekte link in de titel (zie Aanbodkaarten); wikkel nooit een hele kaart in een `<a>` en zet er geen tweede link in.
 
 **Native interacties:** probeer eerst `<details>`, de Popover API, HTML-formuliervalidatie of `<dialog>` met browserondersteunde declaratieve commando’s. Gebruik alleen kleine, gerichte JavaScript-fallbacks als de gewenste functionaliteit zonder die code niet betrouwbaar werkt. Een modal is geen standaard vervanging voor gewone navigatie of tekstinhoud.
 
@@ -110,7 +110,8 @@ Zie `HTML-PATRONEN.md` voor concrete voorbeelden.
 
 - Gebruik `<article class="service-card">` voor een zelfstandig aanboditem.
 - Houd afbeelding, titel, beschrijving en link samen in de kaart.
-- Gebruik een betekenisvolle heading en links die duidelijk maken waarheen ze leiden.
+- De **hele kaart is klikbaar**: de titel is de enige link (`<h3><a class="card-link" href="…">Titel</a></h3>`) en strekt zich via `::after` over de kaart uit. Zo heeft elke kaart één tabstop met de titel als toegankelijke naam. De afbeelding staat in een gewone `<div class="service-image">`; "Lees meer" is een `<span class="text-link" aria-hidden="true">`, alleen een visuele hint. De focusring komt via `:has()` om de hele kaart.
+- Zet geen andere links of knoppen in een kaart: de uitgerekte link ligt eroverheen.
 - Binnen een grid blijven de links bij voorkeur onderaan uitgelijnd (`margin-top: auto`).
 - De aanbodpagina heeft categoriebuttons met JavaScriptfilters; **zonder JavaScript blijven alle kaarten zichtbaar**.
 - Bouw categorieën niet na als nep-tabs zonder juiste toetsenbord- en statusafhandeling.

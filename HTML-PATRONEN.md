@@ -13,9 +13,12 @@ Gebruik deze voorbeelden als bouwstenen wanneer je toekomstige functionaliteit t
   <section aria-labelledby="aanbod-titel">
     <h2 id="aanbod-titel">Ons aanbod</h2>
     <article class="service-card">
-      <h3>Natuurcoaching</h3>
-      <p>Persoonlijke begeleiding in de natuur.</p>
-      <a href="aanbod/natuurcoaching.html">Lees over natuurcoaching</a>
+      <div class="service-image"><img src="…" alt="" …></div>
+      <div class="service-content">
+        <h3><a class="card-link" href="aanbod/natuurcoaching.html">Natuurcoaching</a></h3>
+        <p>Persoonlijke begeleiding in de natuur.</p>
+        <span class="text-link" aria-hidden="true">Lees meer &nearrow;</span>
+      </div>
     </article>
   </section>
 </main>

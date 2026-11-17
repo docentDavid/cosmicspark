@@ -18,7 +18,7 @@
     try { var t = localStorage.getItem('cosmic-theme'); if (t === 'dark' || t === 'light') document.documentElement.dataset.theme = t; } catch (e) {}
   </script>
   <link href="design-tokens.css?v=14" rel="stylesheet"/>
-  <link href="style.css?v=20" rel="stylesheet"/>
+  <link href="style.css?v=21" rel="stylesheet"/>
  </head>
  <body class="page-aanbod">
   <a class="skip" href="#inhoud">
@@ -99,136 +99,87 @@
     </p>
     <div class="service-grid" id="aanbod-kaarten">
      <article class="service-card" data-category="natuur">
-      <a aria-label="Bekijk Natuurcoaching" class="service-image" href="aanbod/natuurcoaching.html">
+      <div class="service-image">
        <img alt="" loading="lazy" decoding="async" width="960" height="1440" src="assets/boslicht-960.webp" srcset="assets/boslicht-480.webp 480w, assets/boslicht-960.webp 960w, assets/boslicht-1600.webp 1600w" sizes="(min-width: 1100px) 360px, (min-width: 700px) 30vw, (min-width: 421px) 46vw, 100vw"/>
-      </a>
+      </div>
       <div class="service-content">
-       <h3>
-        Natuurcoaching
-       </h3>
+       <h3><a class="card-link" href="aanbod/natuurcoaching.html">Natuurcoaching</a></h3>
        <p>
         Vertragen, voelen en weer richting vinden.
        </p>
-       <a class="text-link" href="aanbod/natuurcoaching.html">
-        Lees meer
-        <span aria-hidden="true">
-         &nearrow;
-        </span>
-       </a>
+       <span aria-hidden="true" class="text-link">Lees meer &nearrow;</span>
       </div>
      </article>
      <article class="service-card" data-category="persoonlijk">
-      <a aria-label="Bekijk Individuele coaching" class="service-image" href="aanbod/individuele-coaching.html">
+      <div class="service-image">
        <img alt="" loading="lazy" decoding="async" width="960" height="640" src="assets/berg-en-ruimte-960.webp" srcset="assets/berg-en-ruimte-480.webp 480w, assets/berg-en-ruimte-960.webp 960w, assets/berg-en-ruimte-1600.webp 1600w" sizes="(min-width: 1100px) 360px, (min-width: 700px) 30vw, (min-width: 421px) 46vw, 100vw"/>
-      </a>
+      </div>
       <div class="service-content">
-       <h3>
-        Individuele coaching
-       </h3>
+       <h3><a class="card-link" href="aanbod/individuele-coaching.html">Individuele coaching</a></h3>
        <p>
         Ruimte voor jouw verhaal en nieuwe inzichten.
        </p>
-       <a class="text-link" href="aanbod/individuele-coaching.html">
-        Lees meer
-        <span aria-hidden="true">
-         &nearrow;
-        </span>
-       </a>
+       <span aria-hidden="true" class="text-link">Lees meer &nearrow;</span>
       </div>
      </article>
      <article class="service-card" data-category="persoonlijk">
-      <a aria-label="Bekijk Lichaamsgericht werk" class="service-image" href="aanbod/lichaamsgericht-werk.html">
+      <div class="service-image">
        <img alt="" loading="lazy" decoding="async" width="960" height="1440" src="assets/boslicht-960.webp" srcset="assets/boslicht-480.webp 480w, assets/boslicht-960.webp 960w, assets/boslicht-1600.webp 1600w" sizes="(min-width: 1100px) 360px, (min-width: 700px) 30vw, (min-width: 421px) 46vw, 100vw"/>
-      </a>
+      </div>
       <div class="service-content">
-       <h3>
-        Lichaamsgericht werk
-       </h3>
+       <h3><a class="card-link" href="aanbod/lichaamsgericht-werk.html">Lichaamsgericht werk</a></h3>
        <p>
         Met aandacht voor wat je lichaam vertelt. Alleen voor vrouwen.
        </p>
-       <a class="text-link" href="aanbod/lichaamsgericht-werk.html">
-        Lees meer
-        <span aria-hidden="true">
-         &nearrow;
-        </span>
-       </a>
+       <span aria-hidden="true" class="text-link">Lees meer &nearrow;</span>
       </div>
      </article>
      <article class="service-card" data-category="persoonlijk">
-      <a aria-label="Bekijk Energetisch werk" class="service-image" href="aanbod/energetisch-werk.html">
+      <div class="service-image">
        <img alt="" loading="lazy" decoding="async" width="960" height="640" src="assets/kosmische-nacht-960.webp" srcset="assets/kosmische-nacht-480.webp 480w, assets/kosmische-nacht-960.webp 960w, assets/kosmische-nacht-1600.webp 1600w" sizes="(min-width: 1100px) 360px, (min-width: 700px) 30vw, (min-width: 421px) 46vw, 100vw"/>
-      </a>
+      </div>
       <div class="service-content">
-       <h3>
-        Energetisch werk
-       </h3>
+       <h3><a class="card-link" href="aanbod/energetisch-werk.html">Energetisch werk</a></h3>
        <p>
         Stilstaan bij je energie en balans.
        </p>
-       <a class="text-link" href="aanbod/energetisch-werk.html">
-        Lees meer
-        <span aria-hidden="true">
-         &nearrow;
-        </span>
-       </a>
+       <span aria-hidden="true" class="text-link">Lees meer &nearrow;</span>
       </div>
      </article>
      <article class="service-card" data-category="groepen">
-      <a aria-label="Bekijk Workshops &amp; groepen" class="service-image" href="aanbod/workshops-en-groepen.html">
+      <div class="service-image">
        <img alt="" loading="lazy" decoding="async" width="960" height="640" src="assets/berg-en-ruimte-960.webp" srcset="assets/berg-en-ruimte-480.webp 480w, assets/berg-en-ruimte-960.webp 960w, assets/berg-en-ruimte-1600.webp 1600w" sizes="(min-width: 1100px) 360px, (min-width: 700px) 30vw, (min-width: 421px) 46vw, 100vw"/>
-      </a>
+      </div>
       <div class="service-content">
-       <h3>
-        Workshops &amp; groepen
-       </h3>
+       <h3><a class="card-link" href="aanbod/workshops-en-groepen.html">Workshops &amp; groepen</a></h3>
        <p>
         Samen ervaren, ontdekken en verbinden.
        </p>
-       <a class="text-link" href="aanbod/workshops-en-groepen.html">
-        Lees meer
-        <span aria-hidden="true">
-         &nearrow;
-        </span>
-       </a>
+       <span aria-hidden="true" class="text-link">Lees meer &nearrow;</span>
       </div>
      </article>
      <article class="service-card" data-category="groepen">
-      <a aria-label="Bekijk Retraites &amp; evenementen" class="service-image" href="aanbod/retraites-en-evenementen.html">
+      <div class="service-image">
        <img alt="" loading="lazy" decoding="async" width="960" height="1440" src="assets/boslicht-960.webp" srcset="assets/boslicht-480.webp 480w, assets/boslicht-960.webp 960w, assets/boslicht-1600.webp 1600w" sizes="(min-width: 1100px) 360px, (min-width: 700px) 30vw, (min-width: 421px) 46vw, 100vw"/>
-      </a>
+      </div>
       <div class="service-content">
-       <h3>
-        Retraites &amp; evenementen
-       </h3>
+       <h3><a class="card-link" href="aanbod/retraites-en-evenementen.html">Retraites &amp; evenementen</a></h3>
        <p>
         Tijd en ruimte om echt op adem te komen.
        </p>
-       <a class="text-link" href="aanbod/retraites-en-evenementen.html">
-        Lees meer
-        <span aria-hidden="true">
-         &nearrow;
-        </span>
-       </a>
+       <span aria-hidden="true" class="text-link">Lees meer &nearrow;</span>
       </div>
      </article>
      <article class="service-card" data-category="organisaties">
-      <a aria-label="Bekijk Voor organisaties" class="service-image" href="aanbod/voor-organisaties.html">
+      <div class="service-image">
        <img alt="" loading="lazy" decoding="async" width="960" height="640" src="assets/berg-en-ruimte-960.webp" srcset="assets/berg-en-ruimte-480.webp 480w, assets/berg-en-ruimte-960.webp 960w, assets/berg-en-ruimte-1600.webp 1600w" sizes="(min-width: 1100px) 360px, (min-width: 700px) 30vw, (min-width: 421px) 46vw, 100vw"/>
-      </a>
+      </div>
       <div class="service-content">
-       <h3>
-        Voor organisaties
-       </h3>
+       <h3><a class="card-link" href="aanbod/voor-organisaties.html">Voor organisaties</a></h3>
        <p>
         Natuur als inspiratie voor teams en leiders.
        </p>
-       <a class="text-link" href="aanbod/voor-organisaties.html">
-        Lees meer
-        <span aria-hidden="true">
-         &nearrow;
-        </span>
-       </a>
+       <span aria-hidden="true" class="text-link">Lees meer &nearrow;</span>
       </div>
      </article>
     </div>

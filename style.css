@@ -54,7 +54,7 @@ p{max-width:var(--max-text-width)}
 .service-card{display:flex;flex-direction:column;min-width:0;background:var(--surface);border:1px solid var(--color-card-border);border-radius:var(--radius);overflow:hidden;box-shadow:0 3px 12px var(--color-card-shadow)}
 .service-image{display:block;height:150px;overflow:hidden}
 .service-image img{transition:transform .3s}
-.service-image:hover img{transform:scale(1.045)}
+.service-card:hover .service-image img{transform:scale(1.045)}
 .service-content{display:flex;flex:1;flex-direction:column;gap:8px;padding:16px}
 .service-content h3{font-size:1.08rem;margin:0}
 .service-content p{font-size:.88rem;line-height:1.55;color:var(--muted);margin:0 0 12px}
@@ -285,3 +285,17 @@ main, .shell, .section, .service-grid, .service-card, .service-content { min-wid
 :root[data-theme=dark] .check-list li::before{background:var(--gold)}
 :root[data-theme=dark] .faq-list summary::after{color:var(--gold)}
 @media (min-width:700px){.detail-panel{padding:40px}.faq{grid-template-columns:minmax(0,2fr) minmax(0,3fr);gap:64px;align-items:start}}
+
+/* Hele aanbodkaart klikbaar: de titel is de enige link en strekt zich via ::after over de kaart uit.
+ * Eén tabstop per kaart met de titel als toegankelijke naam; "Lees meer" is alleen een visuele hint. */
+.service-card{position:relative}
+.card-link{color:inherit;text-decoration:none}
+.card-link::after{content:"";position:absolute;inset:0;z-index:1;border-radius:inherit}
+.card-link:focus-visible{outline:none}
+.service-card:has(.card-link:focus-visible){outline:3px solid var(--focus-ring);outline-offset:4px}
+.service-content span.text-link{text-decoration:underline;text-decoration-thickness:1px}
+.service-card:hover span.text-link{text-decoration-thickness:2px}
+@supports not selector(:has(*)){.card-link:focus-visible{outline:3px solid var(--focus-ring);outline-offset:4px}}
+
+/* Detailpagina: de naam van het aanbod is de h1, de slogan staat eronder */
+.detail-tagline{font-family:var(--font-heading);font-size:clamp(1.5rem,3.6vw,2.25rem);line-height:1.2;letter-spacing:-.02em;max-width:20ch;margin-bottom:24px}
