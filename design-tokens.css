@@ -1,0 +1,109 @@
+/*
+ * COSMIC SPARK — DESIGN TOKENS, op basis van de aangeleverde website (v5).
+ *
+ * Dit bestand bevat de daadwerkelijk gebruikte basiswaarden. Bestaande namen
+ * (--forest, --cream, --radius, ...) blijven beschikbaar voor style.css.
+ * Wijzig een waarde hier om de bijbehorende onderdelen consistent te wijzigen.
+ * Dit is gewone CSS: geen Tailwind, bundler of JavaScript nodig.
+ */
+
+:root {
+  color-scheme: light;
+
+  /* Merk / kleuren (bestaande site) */
+  --forest: #203b30;
+  --deep: #111714;
+  --sage: #e4e9df;
+  --cream: #f5f2e9;
+  --gold: #d6b77a;
+  --moss: #78866a;
+
+  /* Semantische oppervlakken en tekst */
+  --text: #203b30;
+  --muted: #455a4c;
+  --surface: #fffdf7;
+  --border: #c5cfc3;
+
+  /* Afmetingen en ritme — sluiten aan op bestaande website */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 16px;
+  --space-4: 24px;
+  --space-5: 32px;
+  --space-6: 48px;
+  --space-7: 64px;
+  --radius-sm: 12px;
+  --radius: 20px;
+  --radius-lg: 32px;
+  --radius-pill: 999px;
+  --shadow: 0 14px 40px #10271c12;
+
+  /* Typografie — exact de bestaande fontkeuzes */
+  --font-body: system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-heading: Georgia, "Times New Roman", serif;
+  --font-size-body: 1rem;
+  --line-height-body: 1.65;
+  --max-text-width: 66ch;
+  --max-shell-width: 1160px;
+
+  /* Interactie — huidige kleurwaarden; controleer op elke ondergrond */
+  --focus-ring: #ad7424;
+  --action-hover: #345646;
+  --brand-spark: #a9772b;
+  --text-accent: #647a58;
+
+  /* Mobiele navigatie: bestaande layout met vier vaste items */
+  --dock-safe: env(safe-area-inset-bottom, 0px);
+  --dock-height: calc(82px + var(--dock-safe));
+
+  /* Bestaande componentkleuren, één centrale plek om alles aan te passen.
+   * De namen 'fixed' zijn bewust NIET gekoppeld aan het wisselende thema. */
+  --color-white: #fff;
+  --color-cream-ink: #f2f0e8;
+  --color-olive: #6d7449;
+  --color-cream-fixed: #f5f2e9;
+  --color-muted-on-deep: #d6e0d4;
+  --color-eyebrow: #526d51;
+  --color-eyebrow-light: #f5dca9;
+  --color-gold-hover: #f0d69d;
+  --color-hero-start: #0b1c16e8;
+  --color-hero-middle: #0b1c16bb;
+  --color-hero-end: #0b1c1660;
+  --color-hero-emphasis: #f2d79e;
+  --color-card-border: #d8dfd4;
+  --color-card-shadow: #14251a08;
+  --color-filter-border: #748a78; /* min. 3:1 op cream */
+  --color-portrait-start: #d9e3d2;
+  --color-portrait-end: #a3b39c;
+  --color-placeholder-border: #617b67;
+  --color-placeholder-text: #314b37;
+  --color-placeholder-background: #f3f0e1b0;
+  --color-values-divider: #b5c5b4;
+  --color-steps-divider: #bccabd;
+  --color-org-symbol: #856b3a;
+  --color-input-border: #748a78; /* min. 3:1 op surface, wit en cream */
+  --color-control-border: #748a78; /* rand themaknop/menuknop, min. 3:1 op cream */
+  --color-input-text: #17281c;
+  --color-footer-divider: #526459;
+  --color-dark-card-border: #607262;
+  --color-dark-filter-border: #aab7a8;
+  --color-dark-sage-fixed: #293e31;
+  --color-surface-fixed: #fffdf7;
+  --color-dock-border: #b7c5b8;
+  --color-dark-border-fixed: #637866;
+
+}
+
+/* Donker thema: bestaande semantische overrides uit style.css (v5). */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --cream: #111714;
+  --surface: #203b30;
+  --sage: #293e31;
+  --text: #f2f0e8;
+  --muted: #e0e6da;
+  --border: #637866;
+  /* Lichtere focusring: #ad7424 haalt op donkere sage/forest geen 3:1. */
+  --focus-ring: #d6b77a;
+  --color-control-border: #637866;
+}

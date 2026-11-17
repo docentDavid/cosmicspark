@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="nl">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/>
+  <meta content="Stel een vraag over natuurcoaching of het aanbod van Cosmic Spark. Stuur Kim via het formulier een bericht." name="description"/>
+  <meta content="light dark" name="color-scheme"/>
+  <title>
+   Contact | Cosmic Spark
+  </title>
+  <link href="favicon.svg" rel="icon" type="image/svg+xml"/>
+  <link href="favicon.ico" rel="alternate icon" sizes="any"/>
+  <script>
+    /* Gekozen thema toepassen vóór de eerste weergave, zodat het donkere thema niet licht knippert. */
+    try { var t = localStorage.getItem('cosmic-theme'); if (t === 'dark' || t === 'light') document.documentElement.dataset.theme = t; } catch (e) {}
+  </script>
+  <link href="design-tokens.css?v=10" rel="stylesheet"/>
+  <link href="style.css?v=11" rel="stylesheet"/>
+ </head>
+ <body class="page-contact">
+  <a class="skip" href="#inhoud">
+   Ga naar inhoud
+  </a>
+  <header class="site-header">
+   <div class="shell header-inner">
+    <a aria-label="Cosmic Spark - home" class="brand" href="index.html">
+     <span aria-hidden="true" class="spark">
+      ✳
+     </span>
+     Cosmic Spark
+    </a>
+    <nav aria-label="Hoofdnavigatie" class="desktop-nav">
+     <a href="index.html">
+      Home
+     </a>
+     <a href="aanbod.html">
+      Aanbod
+     </a>
+     <a href="over-kim.html">
+      Over Kim
+     </a>
+     <a aria-current="page" href="contact.html">
+      Contact
+     </a>
+    </nav>
+    <div class="header-actions">
+     <button aria-label="Donkere modus" hidden="" aria-pressed="false" class="theme-toggle" title="Wissel tussen licht en donker thema" type="button">
+      ◐
+     </button>
+    </div>
+   </div>
+  </header>
+  <main id="inhoud">
+   <section class="section shell contact-layout">
+    <div class="contact-copy">
+     <p class="eyebrow">
+      Contact
+     </p>
+     <h1>
+      Laten we
+      <em>
+       kennismaken
+      </em>
+     </h1>
+     <p class="lead">
+      Heb je een vraag, wil je meer weten of voel je dat dit bij je past? Ik hoor graag van je.
+     </p>
+     <div class="contact-note">
+      <span aria-hidden="true">
+       ✳
+      </span>
+      <p>
+       Je hoeft je vraag nog niet helemaal helder te hebben. Een eerste bericht is genoeg.
+      </p>
+     </div>
+     <div class="contact-photo">
+      <img alt="Warm zonlicht tussen groene bomen" loading="lazy" decoding="async" width="960" height="1440" src="assets/boslicht-960.webp" srcset="assets/boslicht-480.webp 480w, assets/boslicht-960.webp 960w, assets/boslicht-1600.webp 1600w" sizes="(min-width: 1224px) 548px, (min-width: 700px) 46vw, 100vw"/>
+     </div>
+    </div>
+    <div class="form-panel">
+     <h2>
+      Bericht opstellen
+     </h2>
+     <p>
+      Je bericht komt per e-mail bij Kim binnen. Ze antwoordt op het e-mailadres dat je hieronder invult.
+     </p>
+     <!--
+      Verzending via Web3Forms (https://web3forms.com).
+      De toegangssleutel hoort bij kimwaijers@hotmail.com en is geen geheim: hij kan alleen
+      berichten naar dat adres sturen. Vervang VUL-HIER-DE-WEB3FORMS-SLEUTEL-IN door de
+      sleutel uit de mail van Web3Forms. De name-attributen hieronder worden de labels in de mail.
+     -->
+     <form action="https://api.web3forms.com/submit" id="contact-form" method="post">
+      <input name="access_key" type="hidden" value="VUL-HIER-DE-WEB3FORMS-SLEUTEL-IN"/>
+      <input name="subject" type="hidden" value="Nieuw bericht via de website van Cosmic Spark"/>
+      <input name="from_name" type="hidden" value="Website Cosmic Spark"/>
+      <!-- Spamval: onzichtbaar en niet bereikbaar voor bezoekers; alleen spambots vinken dit aan. -->
+      <input aria-hidden="true" autocomplete="off" class="botcheck" name="botcheck" tabindex="-1" type="checkbox"/>
+      <div class="field">
+       <label for="naam">
+        Naam
+        <span aria-hidden="true">
+         *
+        </span>
+       </label>
+       <input autocomplete="name" id="naam" maxlength="100" name="Naam" required=""/>
+      </div>
+      <div class="field">
+       <label for="email">
+        E-mailadres
+        <span aria-hidden="true">
+         *
+        </span>
+       </label>
+       <input autocomplete="email" id="email" maxlength="150" name="email" required="" type="email"/>
+      </div>
+      <div class="field">
+       <label for="telefoon">
+        Telefoonnummer
+        <span class="optional">
+         (optioneel)
+        </span>
+       </label>
+       <input autocomplete="tel" id="telefoon" maxlength="40" name="Telefoonnummer" type="tel"/>
+      </div>
+      <div class="field">
+       <label for="dienst">
+        Waar gaat je vraag over?
+       </label>
+       <div class="select-control">
+        <select id="dienst" name="Onderwerp">
+         <option value="">
+          Kies eventueel een onderwerp
+         </option>
+         <optgroup label="Individueel">
+          <option>
+           Energetisch werk
+          </option>
+          <option>
+           Individuele coaching
+          </option>
+          <option>
+           Lichaamsgericht werk
+          </option>
+          <option>
+           Natuurcoaching
+          </option>
+         </optgroup>
+         <optgroup label="Groepen">
+          <option>
+           Retraites en evenementen
+          </option>
+          <option>
+           Workshops en groepen
+          </option>
+         </optgroup>
+         <optgroup label="Zakelijk">
+          <option>
+           Bedrijven
+          </option>
+          <option>
+           Instellingen
+          </option>
+          <option value="Organisaties">
+           Organisaties
+          </option>
+         </optgroup>
+        </select>
+       </div>
+      </div>
+      <div class="field">
+       <label for="bericht">
+        Je bericht
+        <span aria-hidden="true">
+         *
+        </span>
+       </label>
+       <textarea id="bericht" maxlength="3000" minlength="10" name="Bericht" required="" rows="6"></textarea>
+      </div>
+      <p class="form-hint">
+       * Verplicht. Je bericht wordt verstuurd via de formulierdienst Web3Forms. Je gegevens worden alleen gebruikt om je vraag te beantwoorden.
+      </p>
+      <button class="button" id="contact-submit" type="submit">
+       Verstuur bericht
+       <span aria-hidden="true">
+        &nearrow;
+       </span>
+      </button>
+      <p class="form-status" id="form-status" role="status" tabindex="-1">
+      </p>
+     </form>
+    </div>
+   </section>
+  </main>
+  <footer class="site-footer">
+   <div class="shell footer-grid">
+    <div>
+     <a class="brand" href="index.html">
+      <span aria-hidden="true" class="spark">
+       ✳
+      </span>
+      Cosmic Spark
+     </a>
+    </div>
+    <nav aria-label="Paginanavigatie">
+     <strong>Pagina's</strong>
+     <a href="index.html">Home</a>
+     <a href="aanbod.html">Aanbod</a>
+     <a href="over-kim.html">Over Kim</a>
+     <a href="natuurcoaching.html">Natuurcoaching</a>
+    </nav>
+   </div>
+   <div class="shell footer-bottom">
+    &copy; Cosmic Spark
+   </div>
+  </footer>
+  <nav aria-label="Hoofdnavigatie mobiel" class="mobile-dock" data-layout="fixed-bottom-four">
+   <a aria-label="Home" data-dock="index.html" href="index.html">
+    <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24">
+     <path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z">
+     </path>
+    </svg>
+    <span>
+     Home
+    </span>
+   </a>
+   <a aria-label="Aanbod" data-dock="aanbod.html" href="aanbod.html">
+    <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24">
+     <path d="M20 4C9 4 4 9 4 16a4 4 0 0 0 4 4c7 0 12-5 12-16Z">
+     </path>
+     <path d="M4 20c2-5 6-9 12-12">
+     </path>
+    </svg>
+    <span>
+     Aanbod
+    </span>
+   </a>
+   <a aria-label="Over Kim" data-dock="over-kim.html" href="over-kim.html">
+    <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24">
+     <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z">
+     </path>
+    </svg>
+    <span>
+     Over Kim
+    </span>
+   </a>
+   <a aria-current="page" aria-label="Contact" class="active" data-dock="contact.html" href="contact.html">
+    <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24">
+     <rect height="14" rx="2" width="18" x="3" y="5">
+     </rect>
+     <path d="m3 7 9 7 9-7">
+     </path>
+    </svg>
+    <span>
+     Contact
+    </span>
+   </a>
+  </nav>
+  <script defer="" src="script.js?v=9">
+  </script>
+ </body>
+</html>
