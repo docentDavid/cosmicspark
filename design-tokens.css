@@ -91,6 +91,7 @@
   --color-surface-fixed: #fffdf7;
   --color-dock-border: #b7c5b8;
   --color-dark-border-fixed: #637866;
+  --color-error: #a3261b; /* foutmeldingen, min. 4.5:1 op surface en wit */
 
 }
 
@@ -106,4 +107,5 @@
   /* Lichtere focusring: #ad7424 haalt op donkere sage/forest geen 3:1. */
   --focus-ring: #d6b77a;
   --color-control-border: #637866;
+  --color-error: #ffb4a6; /* min. 4.5:1 op forest */
 }

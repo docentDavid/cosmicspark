@@ -83,9 +83,49 @@
       if (state !== 'busy') formStatus.focus();
     };
 
+    // Validatie met Nederlandse meldingen onder elk veld. Zonder JavaScript
+    // valt het formulier terug op de standaardcontrole van de browser.
+    form.noValidate = true;
+    const fields = [...form.querySelectorAll('.field input, .field textarea')];
+    const messageFor = field => {
+      const value = field.value.trim();
+      if (field.required && value === '') {
+        return { naam: 'Vul je naam in.', email: 'Vul je e-mailadres in.', bericht: 'Schrijf een bericht.' }[field.id] || 'Vul dit veld in.';
+      }
+      if (value === '') return '';
+      // minlength wordt door browsers alleen na typen gecontroleerd, daarom hier zelf.
+      if (field.minLength > 0 && value.length < field.minLength) {
+        return field.id === 'bericht'
+          ? `Je bericht is te kort: gebruik minimaal ${field.minLength} tekens.`
+          : `Gebruik minimaal ${field.minLength} tekens.`;
+      }
+      if (field.validity.valid) return '';
+      if (field.id === 'naam') return 'Vul je naam in (minimaal 2 tekens).';
+      if (field.id === 'email') return 'Vul een geldig e-mailadres in, bijvoorbeeld naam@voorbeeld.nl.';
+      if (field.id === 'telefoon') return 'Vul een geldig telefoonnummer in (8 tot 20 tekens: cijfers, spaties, streepjes, haakjes en eventueel een + aan het begin), of laat het veld leeg.';
+      return field.validationMessage;
+    };
+    const checkField = field => {
+      const message = messageFor(field);
+      const error = document.getElementById(field.getAttribute('aria-describedby'));
+      if (error) error.textContent = message;
+      if (message) field.setAttribute('aria-invalid', 'true');
+      else field.removeAttribute('aria-invalid');
+      return !message;
+    };
+    fields.forEach(field => {
+      // Pas na het verlaten van een veld controleren; daarna live bijwerken zolang het fout is.
+      field.addEventListener('blur', () => { if (field.value !== '') checkField(field); });
+      field.addEventListener('input', () => { if (field.hasAttribute('aria-invalid')) checkField(field); });
+    });
+
     form.addEventListener('submit', async event => {
       event.preventDefault();
-      if (!form.reportValidity()) return;
+      const invalid = fields.filter(field => !checkField(field));
+      if (invalid.length) {
+        invalid[0].focus();
+        return;
+      }
 
       const data = Object.fromEntries(new FormData(form));
       if (!data.access_key || data.access_key.startsWith('VUL-')) {
@@ -96,7 +136,9 @@
       delete data.redirect; // alleen bedoeld voor verzenden zonder JavaScript
       // Lege optionele velden weglaten, zodat de mail alleen ingevulde gegevens toont.
       Object.keys(data).forEach(key => {
-        if (typeof data[key] === 'string' && data[key].trim() === '') delete data[key];
+        if (typeof data[key] !== 'string') return;
+        data[key] = data[key].trim();
+        if (data[key] === '') delete data[key];
       });
       data.subject = `Nieuw bericht van ${data.Naam}` + (data.Onderwerp ? ` over ${data.Onderwerp}` : '') + ' (Cosmic Spark)';
 

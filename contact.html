@@ -105,7 +105,8 @@
          *
         </span>
        </label>
-       <input autocomplete="name" id="naam" maxlength="100" name="Naam" required=""/>
+       <input aria-describedby="naam-fout" autocomplete="name" id="naam" maxlength="100" minlength="2" name="Naam" title="Vul je naam in (minimaal 2 tekens)." pattern=".*\S.*\S.*" required=""/>
+       <p class="field-error" id="naam-fout"></p>
       </div>
       <div class="field">
        <label for="email">
@@ -114,7 +115,8 @@
          *
         </span>
        </label>
-       <input autocomplete="email" id="email" maxlength="150" name="email" required="" type="email"/>
+       <input aria-describedby="email-fout" autocomplete="email" id="email" maxlength="150" name="email" title="Vul een e-mailadres in zoals naam@voorbeeld.nl." pattern="[^@\s]+@[^@\s]+\.[^@\s]{2,}" required="" spellcheck="false" type="email"/>
+       <p class="field-error" id="email-fout"></p>
       </div>
       <div class="field">
        <label for="telefoon">
@@ -123,7 +125,8 @@
          (optioneel)
         </span>
        </label>
-       <input autocomplete="tel" id="telefoon" maxlength="40" name="Telefoonnummer" type="tel"/>
+       <input aria-describedby="telefoon-fout" autocomplete="tel" id="telefoon" inputmode="tel" maxlength="20" name="Telefoonnummer" title="Gebruik alleen cijfers, spaties, streepjes, haakjes en eventueel een + aan het begin." pattern="\+?[0-9 \-\(\)]{8,20}" type="tel"/>
+       <p class="field-error" id="telefoon-fout"></p>
       </div>
       <div class="field">
        <label for="dienst">
@@ -177,7 +180,8 @@
          *
         </span>
        </label>
-       <textarea id="bericht" maxlength="3000" minlength="10" name="Bericht" required="" rows="6"></textarea>
+       <textarea aria-describedby="bericht-fout" id="bericht" maxlength="3000" minlength="10" name="Bericht" required="" rows="6"></textarea>
+       <p class="field-error" id="bericht-fout"></p>
       </div>
       <p class="form-hint">
        * Verplicht. Je bericht wordt verstuurd via de formulierdienst Web3Forms. Je gegevens worden alleen gebruikt om je vraag te beantwoorden.

@@ -246,3 +246,9 @@ main, .shell, .section, .service-grid, .service-card, .service-content { min-wid
     .org-image { aspect-ratio: 5 / 4; }
   }
 }
+
+/* Formuliervalidatie: foutmelding per veld (gevuld door script.js) */
+.field-error{margin:0;font-size:.875rem;font-weight:650;color:var(--color-error)}
+.field-error:empty{display:none}
+.field-error::before{content:"! "}
+.field [aria-invalid=true]{border-color:var(--color-error);border-width:2px}
