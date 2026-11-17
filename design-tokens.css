@@ -104,4 +104,8 @@
   --focus-ring: #d6b77a;
   --color-control-border: #637866;
   --color-error: #ffb4a6; /* min. 4.5:1 op forest */
+  /* Kaarten op een groen sectievlak: lichter dan --sage, zodat ze loskomen.
+   * Tekst min. 7:1, goud 4.6:1; rand 3:1 op --sage. */
+  --surface-raised: #34503f;
+  --border-raised: #7a8f7d;
 }
