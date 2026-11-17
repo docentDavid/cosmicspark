@@ -7,13 +7,19 @@
  *
  * Verhoog CACHE_VERSION wanneer je de lijst hieronder wijzigt of een oude cache wilt opruimen.
  */
-const CACHE_VERSION = 'cosmic-spark-v1';
+const CACHE_VERSION = 'cosmic-spark-v3';
 
 const PRECACHE = [
   './',
   'index.html',
   'aanbod.html',
-  'natuurcoaching.html',
+  'aanbod/natuurcoaching.html',
+  'aanbod/individuele-coaching.html',
+  'aanbod/lichaamsgericht-werk.html',
+  'aanbod/energetisch-werk.html',
+  'aanbod/workshops-en-groepen.html',
+  'aanbod/retraites-en-evenementen.html',
+  'aanbod/voor-organisaties.html',
   'over-kim.html',
   'contact.html',
   'bedankt.html',

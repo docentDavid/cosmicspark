@@ -34,9 +34,11 @@
 
   // PWA: service worker voor installeren en offline bekijken. Alleen via http(s);
   // de site werkt zonder service worker precies hetzelfde.
+  // sw.js staat naast script.js; zo werkt het ook vanaf pagina's in een submap (bijv. /aanbod/).
+  const swUrl = new URL('sw.js', document.currentScript ? document.currentScript.src : location.href);
   if ('serviceWorker' in navigator && location.protocol !== 'file:') {
     window.addEventListener('load', () => {
-      navigator.serviceWorker.register('sw.js').catch(() => {});
+      navigator.serviceWorker.register(swUrl).catch(() => {});
     });
   }
 

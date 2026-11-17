@@ -15,7 +15,7 @@ Gebruik deze voorbeelden als bouwstenen wanneer je toekomstige functionaliteit t
     <article class="service-card">
       <h3>Natuurcoaching</h3>
       <p>Persoonlijke begeleiding in de natuur.</p>
-      <a href="natuurcoaching.html">Lees over natuurcoaching</a>
+      <a href="aanbod/natuurcoaching.html">Lees over natuurcoaching</a>
     </article>
   </section>
 </main>
