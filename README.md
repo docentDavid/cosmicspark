@@ -19,6 +19,16 @@ Elke pagina laadt eerst `design-tokens.css` en daarna `style.css`, via twee loss
 
 De oorspronkelijke variabelen zijn uit `style.css` verhuisd. De bestaande selectors en media queries zijn **niet opnieuw ontworpen**. Ook alle overige bestaande hexkleuren uit `style.css` zijn aan benoemde tokens gekoppeld. Lettertypen, tekstbreedte, focuskleur en hoverkleur gebruiken eveneens tokens.
 
+## Progressive Web App (PWA)
+
+De site is installeerbaar als app en de pagina's blijven offline te bekijken.
+
+- `manifest.webmanifest` — naam, kleuren en iconen van de app.
+- `sw.js` — service worker: pagina's eerst via het netwerk (offline uit de cache), CSS/JS/afbeeldingen eerst uit de cache. Formulierverzendingen gaan er niet doorheen.
+- `assets/icon*.svg/png` en `assets/apple-touch-icon.png` — app-iconen, gebaseerd op `favicon.svg`.
+- Verhoog `CACHE_VERSION` in `sw.js` als je een pagina toevoegt of hernoemt (en zet die in de `PRECACHE`-lijst).
+- De service worker werkt alleen via `http(s)://` (bijv. Live Server of de echte host), niet bij openen als bestand.
+
 ## Wat is niet veranderd?
 
 - Bestaande pagina's, URLs en afbeeldingen.

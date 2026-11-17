@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="100%" height="100%">
+  <!-- Cosmic Spark app-icoon: zon-icoon uit favicon.svg op een crèmekleurige achtergrond. -->
+  <rect width="64" height="64" rx="12" fill="#f5f2e9"/>
+  <g transform="translate(32 32) scale(0.78) translate(-32 -28.5)"><g fill="none" stroke="#123d2a" stroke-width="3.8" stroke-linecap="round" stroke-linejoin="round"><path d="M19 43a13 13 0 0 1 26 0"/><path d="M9 49 Q32 42 55 49"/><path d="M32 8v9 M17 13l5 8 M47 13l-5 8 M8 27l9 5 M56 27l-9 5 M6 40l9 2 M58 40l-9 2"/></g></g>
+</svg>

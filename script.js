@@ -9,11 +9,15 @@
     doc.dataset.theme = storedTheme;
   }
 
+  const themeColorMeta = document.querySelector('meta[name="theme-color"]');
+
   const syncThemeButtons = () => {
     const isDark = doc.dataset.theme === 'dark';
     themeButtons.forEach(button => {
       button.setAttribute('aria-pressed', String(isDark));
     });
+    // Kleur van de browser-/app-balk laten aansluiten op de kopbalk (--cream).
+    if (themeColorMeta) themeColorMeta.content = isDark ? '#111714' : '#f5f2e9';
   };
 
   syncThemeButtons();
@@ -27,6 +31,14 @@
       syncThemeButtons();
     });
   });
+
+  // PWA: service worker voor installeren en offline bekijken. Alleen via http(s);
+  // de site werkt zonder service worker precies hetzelfde.
+  if ('serviceWorker' in navigator && location.protocol !== 'file:') {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('sw.js').catch(() => {});
+    });
+  }
 
   const currentPage = location.pathname.split('/').pop() || 'index.html';
   document.querySelectorAll('[data-dock]').forEach(link => {
