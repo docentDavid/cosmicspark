@@ -67,7 +67,8 @@ p{max-width:var(--max-text-width)}
 .feature-photo,.intro-photo,.detail-image,.org-image,.contact-photo{overflow:hidden;border-radius:var(--radius-lg);height:320px}
 .feature-copy p:not(.eyebrow){color:var(--muted)}
 .closing{padding:80px 0;background:var(--forest);color:var(--color-white);text-align:center}
-.closing h2{margin-inline:auto}
+.closing h2,.closing p{margin-inline:auto}
+.closing .eyebrow{padding-left:.18em} /* compenseert de letter-spacing na de laatste letter */
 .closing .button{margin-top:16px}
 .page-intro{padding-bottom:32px}
 .page-intro h1{max-width:13ch}
@@ -252,3 +253,6 @@ main, .shell, .section, .service-grid, .service-card, .service-content { min-wid
 .field-error:empty{display:none}
 .field-error::before{content:"! "}
 .field [aria-invalid=true]{border-color:var(--color-error);border-width:2px}
+
+/* Zon-icoon (zelfde vorm als favicon.svg); volgt de tekstkleur via currentColor */
+.sun-icon{display:block;width:1em;height:1em;flex:none}
