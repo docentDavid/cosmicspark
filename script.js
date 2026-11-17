@@ -93,6 +93,7 @@
         return;
       }
 
+      delete data.redirect; // alleen bedoeld voor verzenden zonder JavaScript
       // Lege optionele velden weglaten, zodat de mail alleen ingevulde gegevens toont.
       Object.keys(data).forEach(key => {
         if (typeof data[key] === 'string' && data[key].trim() === '') delete data[key];

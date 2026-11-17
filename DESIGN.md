@@ -14,7 +14,7 @@ Schrijf in helder Nederlands, menselijk en warm, zonder onnodig spiritueel jargo
 
 ## 2. Technische uitgangspunten
 
-- **Statische multipage-site:** `index.html`, `aanbod.html`, `over-kim.html`, `natuurcoaching.html`, `contact.html`.
+- **Statische multipage-site:** `index.html`, `aanbod.html`, `over-kim.html`, `natuurcoaching.html`, `contact.html`, plus `bedankt.html` (bedankpagina na het contactformulier, `noindex`, niet in de navigatie).
 - Gewoon **HTML5 + CSS**. Houd het zonder build-stap te openen in een browser of met Live Server.
 - **Geen Next.js, React, Vue, router, componentbibliotheek of onnodige npm-afhankelijkheden.**
 - Gebruik JavaScript alleen voor gedrag dat niet goed met HTML/CSS kan. De huidige `script.js` ondersteunt de optionele kleurthemaschakelaar, client-side aanbodfilters, het vooraf kiezen van een dienst in het contactformulier en het verzenden van dat formulier zonder de pagina te verlaten.
@@ -128,7 +128,7 @@ Zie `HTML-PATRONEN.md` voor concrete voorbeelden.
 - Combineer ingebouwde validatie met duidelijke foutmeldingen; `placeholder` is geen label.
 - **Verzending:** het contactformulier verstuurt via [Web3Forms](https://web3forms.com) een e-mail naar Kim (kimwaijers@hotmail.com). De toegangssleutel staat in het verborgen veld `access_key` in `contact.html`. Die sleutel is geen geheim: hij kan alleen berichten naar Kims adres sturen.
 - De `name`-attributen (`Naam`, `email`, `Telefoonnummer`, `Onderwerp`, `Bericht`) zijn de labels in de mail. Het veld `email` wordt automatisch het antwoordadres, zodat Kim direct kan antwoorden. Het verborgen vinkje `botcheck` is een spamval.
-- Met JavaScript verstuurt `script.js` het bericht via `fetch` en toont het een melding onder de knop. Lege optionele velden worden weggelaten en het onderwerp bevat naam en gekozen dienst. Zonder JavaScript verstuurt het formulier gewoon en komt de bezoeker op de bevestigingspagina van Web3Forms.
+- Met JavaScript verstuurt `script.js` het bericht via `fetch` en toont het een melding onder de knop. Lege optionele velden worden weggelaten en het onderwerp bevat naam en gekozen dienst. Zonder JavaScript verstuurt het formulier gewoon en stuurt Web3Forms de bezoeker via het verborgen veld `redirect` door naar `bedankt.html`. Dat moet een volledig https-adres op het domein van de site zijn (nu `https://docentdavid.github.io/cosmicspark/bedankt.html`). Pas het aan als de site naar een ander adres verhuist.
 - Toon alleen een verzendbevestiging als Web3Forms die geeft. Bij een fout blijft alles wat de bezoeker invulde staan.
 - Verzamel alleen gegevens die echt nodig zijn; stel bewaartermijnen en privacytekst vast voordat de site live gaat.
 

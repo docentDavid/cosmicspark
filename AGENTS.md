@@ -29,6 +29,6 @@ Deze map bevat een **statische HTML/CSS-website**. Behandel deze niet als Next.j
 
 - Controleer 320, 375, 700, 959, 960 en 1280 CSS-pixels en 200% zoom.
 - Controleer licht en donker thema, focusvolgorde, toetsenbordbediening, contrast en reduced motion.
-- Check alle vijf HTML-pagina's wanneer navigatie of gedeelde CSS verandert.
+- Check alle HTML-pagina's wanneer navigatie of gedeelde CSS verandert: de vijf hoofdpagina's en `bedankt.html` (bedankpagina na verzenden zonder JavaScript; staat bewust niet in de navigatie).
 - Controleer links, toegankelijke namen, afbeeldingen en formulierlabels.
 - Meld eventuele uitzonderingen en resterende openstaande punten.

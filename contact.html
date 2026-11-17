@@ -15,7 +15,7 @@
     try { var t = localStorage.getItem('cosmic-theme'); if (t === 'dark' || t === 'light') document.documentElement.dataset.theme = t; } catch (e) {}
   </script>
   <link href="design-tokens.css?v=10" rel="stylesheet"/>
-  <link href="style.css?v=11" rel="stylesheet"/>
+  <link href="style.css?v=13" rel="stylesheet"/>
  </head>
  <body class="page-contact">
   <a class="skip" href="#inhoud">
@@ -94,6 +94,8 @@
       <input name="access_key" type="hidden" value="VUL-HIER-DE-WEB3FORMS-SLEUTEL-IN"/>
       <input name="subject" type="hidden" value="Nieuw bericht via de website van Cosmic Spark"/>
       <input name="from_name" type="hidden" value="Website Cosmic Spark"/>
+      <!-- Alleen zonder JavaScript: na verzenden naar de eigen bedankpagina. Moet een volledig https-adres op hetzelfde domein zijn. -->
+      <input name="redirect" type="hidden" value="https://docentdavid.github.io/cosmicspark/bedankt.html"/>
       <!-- Spamval: onzichtbaar en niet bereikbaar voor bezoekers; alleen spambots vinken dit aan. -->
       <input aria-hidden="true" autocomplete="off" class="botcheck" name="botcheck" tabindex="-1" type="checkbox"/>
       <div class="field">
@@ -256,7 +258,7 @@
     </span>
    </a>
   </nav>
-  <script defer="" src="script.js?v=9">
+  <script defer="" src="script.js?v=10">
   </script>
  </body>
 </html>
