@@ -116,6 +116,13 @@ Zie `HTML-PATRONEN.md` voor concrete voorbeelden.
 - De aanbodpagina heeft categoriebuttons met JavaScriptfilters; **zonder JavaScript blijven alle kaarten zichtbaar**.
 - Bouw categorieën niet na als nep-tabs zonder juiste toetsenbord- en statusafhandeling.
 
+### Iconen
+
+- Gebruik iconen die **inhoudelijk bij het onderwerp passen** (gesprek → spraakwolkjes, natuur → blad, tempo → voetstappen). Geen losse siertekens of emoji's zoals ❧ of ♡.
+- Eén rustige stijl: inline SVG-lijniconen met `viewBox="0 0 24 24"`, `fill="none"`, `stroke="currentColor"`, lijndikte 1,6 (mobiele navigatie 1,8), ronde uiteinden en hoeken. Geef ze de klasse `.line-icon` (1em × 1em), zodat ze de tekstgrootte en -kleur volgen.
+- Het zon-icoon (`.sun-icon`) is het logo; gebruik het niet als algemeen inhoudsicoon.
+- Decoratieve iconen krijgen `aria-hidden="true"` (op het icoon of de omliggende `span`) en `focusable="false"`.
+
 ### Afbeeldingen
 
 - De afbeeldingskaders in `style.css` behouden per component een responsieve beeldverhouding en tonen beelden zonder vervorming.

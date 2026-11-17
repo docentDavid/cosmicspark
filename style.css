@@ -83,7 +83,7 @@ p{max-width:var(--max-text-width)}
 .value-list h3{margin-bottom:8px}
 .value-list p{margin:0}
 .value-icon{flex:none;width:1.2em;text-align:center;line-height:1.2;font-size:1.75rem;color:var(--color-olive)}
-.value-icon .sun-icon{margin-inline:auto}
+.value-icon svg{margin-inline:auto}
 .compact-cta{text-align:center}
 .compact-cta h2{margin-inline:auto}
 .back-link{display:inline-block;margin-bottom:32px;font-weight:650}
@@ -258,6 +258,9 @@ main, .shell, .section, .service-grid, .service-card, .service-content { min-wid
 
 /* Zon-icoon (zelfde vorm als favicon.svg); volgt de tekstkleur via currentColor */
 .sun-icon{display:block;width:1em;height:1em;flex:none}
+
+/* Lijniconen (24×24, lijndikte 1,6, ronde uiteinden): rustig en in dezelfde stijl als de iconen in de mobiele navigatie */
+.line-icon{display:block;width:1em;height:1em;flex:none}
 
 /* Detailpagina's in /aanbod: intro met paneel, veelgestelde vragen (details/summary) en acties.
  * aria-current="true" op Aanbod in de navigatie toont dat je in dat onderdeel bent. */
